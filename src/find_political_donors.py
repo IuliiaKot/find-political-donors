@@ -68,7 +68,7 @@ def main(file, output_zip, output_date):
             TRANSACTION_AMT, OTHER_ID = current_line[14], current_line[15]
 
             #if any of the next values are missing skip the entire line
-            if OTHER_ID or not CMTE_ID or not TRANSACTION_AMT:
+            if OTHER_ID or not CMTE_ID or not TRANSACTION_AMT or not validate_amount(TRANSACTION_AMT):
                 continue
 
             if validate_zipcode(ZIP_CODE):
@@ -117,6 +117,20 @@ def validate_date(TRANSACTION_DT):
     except ValueError:
         return False
     # return True
+
+
+def validate_amount(TRANSACTION_AMT):
+    '''
+    input: transaction amount
+    check if input amount has a valid format
+    output: True/False
+    '''
+
+    try:
+        int(TRANSACTION_AMT)
+    except ValueError:
+        return False
+    return True
 
 
 def write_medialvals_by_date(dateDictionary, file):
