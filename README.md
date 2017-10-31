@@ -39,3 +39,18 @@ I also created several tests for different edge cases:
 2. `test_3`: several lines have invalid transactions dates.
 3. `test_6_invalid_date`: all lines has invalid date, output file `medianvals_by_date` is empty
 4. `test_6_invalid_zip`: all lines has invalid zip code, output file `medianvals_by_zip` is empty
+
+## Run Instructions
+1. cd  find-political-donors
+2. In command line run `python ./src/find_political_donors.py ./input/itcont.txt ./output/medianvals_by_zip.txt ./output/medianvals_by_date.txt
+`
+3. To run code test:  `cd insight_testsuite/`, `./run_tests.sh`
+
+## Dependencies
+Version of Python on my laptop is 2.7.
+
+os
+datetime
+sys
+re
+heapq
