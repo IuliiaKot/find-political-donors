@@ -19,7 +19,7 @@ class MedianFinder():
         low = 0
         high = n - 1
         while low <= high:
-            mid = (low + high)//2
+            mid = (low + high)/2
             if self.all_amounts[mid] == value:
                 return mid
             elif self.all_amounts[mid] < value:

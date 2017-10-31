@@ -1,7 +1,7 @@
 from collections import namedtuple
 import re
 from datetime import datetime, date
-from median_finder import MedianFinder
+from median_finder_heap import MedianFinder
 from contributions import Contributions
 import sys
 import os.path
